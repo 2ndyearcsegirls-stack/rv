@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>College Login</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to bottom right, #4b0d0d, #7a1c1c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .card {
+    background: white;
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+  }
+
+  .logo img {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: darkred;
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  button {
+    width: 95%;
+    padding: 10px;
+    background: darkred;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background: #a30000;
+  }
+
+  .output {
+    margin-top: 15px;
+    font-size: 14px;
+    color: black;
+    text-align: left;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- College Logo (replace with your own image file in GitHub repo) -->
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Emblem_of_India.svg/1200px-Emblem_of_India.svg.png">
+  </div>
+
+  <h2>College Login</h2>
+
+  <form onsubmit="showData(event)">
+    <input type="text" id="username" placeholder="Username / Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <!-- LIVE OUTPUT -->
+  <div class="output" id="outputBox">
+    <b>Entered Details:</b>
+    <p id="showUser"></p>
+    <p id="showPass"></p>
+  </div>
+
+</div>
+
+<script>
+function showData(event) {
+  event.preventDefault();
+
+  let user = document.getElementById("username").value;
+  let pass = document.getElementById("password").value;
+
+  document.getElementById("outputBox").style.display = "block";
+
+  document.getElementById("showUser").innerText = "Username: " + user;
+  document.getElementById("showPass").innerText = "Password: " + pass;
+}
+</script>
+
+</body>
+</html>
